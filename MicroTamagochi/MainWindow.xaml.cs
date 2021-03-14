@@ -50,7 +50,7 @@ namespace MicroTamagochi
             if (this.pbEnergia.Value <= 0 || this.pbDiversion.Value <= 0 || this.pbComida.Value <= 0)
             {
                 t1.Stop();
-                this.lblPuntuacion.Content = "Tu puntuación es de " + this.timer.ToString() + " puntos.";
+                this.lblPuntuacion.Text = "TU PUNTUACIÓN ES DE " + this.timer.ToString() + " PUNTOS";
                 this.lblPuntuacion.Visibility = Visibility.Visible;
                 btnAlimentar.IsEnabled = false;
                 btnDescansar.IsEnabled = false;

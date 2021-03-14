@@ -584,7 +584,7 @@
         <TextBox Margin="2" TextWrapping="Wrap" Text="Energía" Grid.Column="1" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
         <TextBox Grid.Column="1" Margin="2" Grid.Row="1" TextWrapping="Wrap" Text="Diversión" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
         <TextBox Grid.Column="1" Margin="2" Grid.Row="2" TextWrapping="Wrap" Text="Comida" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
-        <Button x:Name="btnDescansar" Content="Descansar" Grid.Column="4" Margin="10,10,10,2" FontSize="22" FontWeight="Bold" Click="btnDescansar_Click" Foreground="Black">
+        <Button x:Name="btnDescansar" Content="Descansar" Grid.Column="4" Margin="10,10,10,0" FontSize="22" FontWeight="Bold" Click="btnDescansar_Click" Foreground="Black" Height="32.9" VerticalAlignment="Top">
             <Button.Background>
                 <ImageBrush ImageSource="btnFondo.jpg" Stretch="None"/>
             </Button.Background>
@@ -599,7 +599,6 @@
                 <ImageBrush ImageSource="btnFondo.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lblPuntuacion" Grid.ColumnSpan="3" Content="" Grid.Column="1" Margin="5" Grid.Row="5" FontSize="24" FontWeight="Bold" Visibility="Hidden"/>
         <WrapPanel Grid.Column="4" Margin="5,55,7,5" Grid.Row="3" Background="#85000000">
             <Image Height="100" Width="100" Source="https://i.pinimg.com/originals/e0/54/0e/e0540e1cd1d19915f75c9d80438d04c7.jpg" Stretch="UniformToFill" Margin="2" MouseUp="cambiarFondo"/>
             <Image Height="100" Width="100" Source="https://fondosmil.com/fondo/26540.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo"/>
@@ -607,6 +606,7 @@
             <Image Height="100" Width="100" Source="https://www.nintenderos.com/wp-content/uploads/2019/04/super-mario-maker.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo"/>
         </WrapPanel>
         <Image Margin="2,10.3,2,2" Grid.RowSpan="3" Grid.ColumnSpan="2" Source="logoSuperTamagochi.png"/>
+        <TextBox x:Name="lblPuntuacion" Grid.ColumnSpan="2" Grid.Column="2" Margin="10,0,0,7.258" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" FontWeight="Bold" FontFamily="Segoe UI Black" Text="TU PUNTUACIÓN ES DE X PUNTOS" Background="{x:Null}" VerticalScrollBarVisibility="Disabled" IsReadOnly="True" Padding="2" Height="52.259"/>
     </Grid>
 </Window>
 
