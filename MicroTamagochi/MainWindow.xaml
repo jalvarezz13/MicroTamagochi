@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicroTamagochi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="774" Width="1036" MinWidth="800" MinHeight="600" Background="White">
+        Title="Juego" Height="774" Width="1036" MinWidth="800" MinHeight="600" Background="White" WindowStartupLocation="CenterScreen" Icon="iconoVentana.png">
     <Window.Resources>
         <Storyboard x:Key="dormirAnimation" AutoReverse="False">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ojoCerradoIzqAbajo">
@@ -384,8 +384,8 @@
             <RowDefinition Height="91*"/>
             <RowDefinition Height="59.517"/>
         </Grid.RowDefinitions>
-        <Image x:Name="imgFondo" Grid.ColumnSpan="5" Grid.RowSpan="6" Source="https://i.pinimg.com/originals/41/9d/c5/419dc5dc0352d8c051d8d935824caa78.jpg" Stretch="UniformToFill" Margin="-5,0,-5.333,0"/>
-        <Canvas Grid.Column="2" Margin="0.5,27.392,30,27.391" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="500" Height="490">
+        <Image x:Name="imgFondo" Grid.ColumnSpan="5" Grid.RowSpan="6" Source="https://i.pinimg.com/originals/41/9d/c5/419dc5dc0352d8c051d8d935824caa78.jpg" Stretch="UniformToFill" Margin="-5,0,-5.333,0" d:IsHidden="True"/>
+        <Canvas Grid.Column="2" Margin="0.5,27.392,30,27.391" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="500" Height="490" AllowDrop="True" Drop="colocarColeccionable">
             <Path x:Name="cabeza" Fill="#FFFFC69B" Stroke="Black" Height="293.766" Canvas.Left="24.14" Canvas.Top="65.816" Width="330.139" Data="M171.45287,0.5 L206.53584,76.153687 206.64841,76.160546 C230.84747,77.883225 249.24806,86.807694 256.65271,102.77525 265.81598,122.53513 256.12717,148.74031 233.60455,173.4292 L233.18805,173.87531 233.24614,173.90668 220.77063,196.36272 220.74878,196.4167 C216.43938,205.98825 199.72122,219.40556 177.72346,230.0257 157.26556,239.90239 137.87003,244.64241 127.22247,243.11006 L126.55505,242.99355 126.55505,243.00653 97.878059,243.00653 97.878059,242.81392 97.061577,242.92256 C59.77282,247.42888 29.73642,238.70869 19.740133,217.15248 11.841829,200.12039 17.949934,178.29971 34.210312,156.78897 L34.517921,156.39001 0.5,83.03302 z" RenderTransformOrigin="0.461496342087968,0.971334107480218" Stretch="Fill">
                 <Path.RenderTransform>
                     <TransformGroup>
@@ -570,45 +570,138 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
+            <Image x:Name="imgGorro" HorizontalAlignment="Left" Height="284" VerticalAlignment="Top" Width="318" Canvas.Left="68" Canvas.Top="12" Source="http://4.bp.blogspot.com/_WvACVGW1iPE/TPBCmaPdcvI/AAAAAAAABaM/dcZrsZWGg_M/s1600/navidad-gorro-3.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="4"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
         </Canvas>
         <ProgressBar x:Name="pbDiversion" Grid.Column="3" Margin="10,10,6,2" Grid.Row="1" Value="75" Background="#7FE6E6E6"/>
         <ProgressBar x:Name="pbComida" Grid.Column="3" Margin="10,10,6,2" Grid.Row="2" Value="75" Background="#7FE6E6E6"/>
         <ProgressBar x:Name="pbEnergia" Grid.Column="3" Margin="10,10,6,2" Value="75" Background="#7FE6E6E6"/>
-        <Label Content="Logros" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="41" Width="208" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left"/>
-        <Label Content="Premios" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="41" Width="208" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left"/>
-        <Label Content="Coleccionables" Margin="10,10,0,0" Grid.Row="3" FontWeight="Bold" FontSize="20" Grid.Column="4" VerticalAlignment="Top"/>
-        <Label Content="Ranking" Margin="10,10,0,0" Grid.Row="4" FontWeight="Bold" FontSize="20" Grid.Column="4" VerticalAlignment="Top"/>
+        <Label Content="Premios" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="41" Width="208" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Coleccionables" Margin="10,10,0,0" Grid.Row="3" FontWeight="Bold" FontSize="20" Grid.Column="4" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Ranking" Margin="10,10,0,0" Grid.Row="4" FontWeight="Bold" FontSize="20" Grid.Column="4" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <StackPanel Margin="6,55,6,6" Grid.Row="3" Background="#85000000"/>
         <StackPanel Margin="6,55,6,6" Grid.Row="4" Background="#85000000"/>
         <StackPanel Grid.Column="4" Margin="6,55,6,6" Grid.Row="4" Background="#85000000"/>
-        <TextBox Margin="2" TextWrapping="Wrap" Text="Energía" Grid.Column="1" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
-        <TextBox Grid.Column="1" Margin="2" Grid.Row="1" TextWrapping="Wrap" Text="Diversión" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
-        <TextBox Grid.Column="1" Margin="2" Grid.Row="2" TextWrapping="Wrap" Text="Comida" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
-        <Button x:Name="btnDescansar" Content="Descansar" Grid.Column="4" Margin="10,10,10,0" FontSize="22" FontWeight="Bold" Click="btnDescansar_Click" Foreground="Black" Height="32.9" VerticalAlignment="Top">
+        <Button x:Name="btnDescansar" Content="Descansar" Grid.Column="4" Margin="5,3" FontSize="22" FontWeight="Bold" Click="btnDescansar_Click" Foreground="Black">
             <Button.Background>
-                <ImageBrush ImageSource="btnFondo.jpg" Stretch="None"/>
+                <ImageBrush ImageSource="btnFondo.jpg"/>
             </Button.Background>
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Viewbox>
+                        <TextBlock>Jugar</TextBlock>
+                    </Viewbox>
+                </DataTemplate>
+            </Button.ContentTemplate>
         </Button>
-        <Button x:Name="btnJugar" Content="Jugar" Grid.Column="4" Margin="10,10,10,2" Grid.Row="1" FontSize="22" FontWeight="Bold" Click="btnJugar_Click" Foreground="Black">
+        <Button x:Name="btnJugar" Content="Jugar" Grid.Column="4" Margin="5,3" Grid.Row="1" FontSize="22" FontWeight="Bold" Click="btnJugar_Click" Foreground="Black">
             <Button.Background>
-                <ImageBrush ImageSource="btnFondo.jpg" Stretch="None"/>
+                <ImageBrush ImageSource="btnFondo.jpg"/>
             </Button.Background>
-        </Button>
-        <Button x:Name="btnAlimentar" Content="Alimentar" Grid.Column="4" Margin="10,10,10,2" Grid.Row="2" FontSize="22" FontWeight="Bold" Click="btnAlimentar_Click" Foreground="Black">
-            <Button.Background>
-                <ImageBrush ImageSource="btnFondo.jpg" Stretch="None"/>
-            </Button.Background>
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Viewbox>
+                        <TextBlock>Jugar</TextBlock>
+                    </Viewbox>
+                </DataTemplate>
+            </Button.ContentTemplate>
         </Button>
         <WrapPanel Grid.Column="4" Margin="5,55,7,5" Grid.Row="3" Background="#85000000">
-            <Image Height="100" Width="100" Source="https://i.pinimg.com/originals/e0/54/0e/e0540e1cd1d19915f75c9d80438d04c7.jpg" Stretch="UniformToFill" Margin="2" MouseUp="cambiarFondo"/>
-            <Image Height="100" Width="100" Source="https://fondosmil.com/fondo/26540.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo"/>
-            <Image Height="100" Width="100" Source="https://i.pinimg.com/originals/78/5b/dd/785bdd265eaa41e2549660a3246e1ee2.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo"/>
-            <Image Height="100" Width="100" Source="https://www.nintenderos.com/wp-content/uploads/2019/04/super-mario-maker.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo"/>
+            <Image Height="63" Width="79" Source="https://i.pinimg.com/originals/e0/54/0e/e0540e1cd1d19915f75c9d80438d04c7.jpg" Stretch="UniformToFill" Margin="2" MouseUp="cambiarFondo" ToolTip="Pinche para cambiar la imagen de fondo."/>
+            <Image Height="64" Width="68" Source="https://fondosmil.com/fondo/26540.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo" ToolTip="Pinche para cambiar la imagen de fondo."/>
+            <Image Height="73" Width="66" Source="https://i.pinimg.com/originals/78/5b/dd/785bdd265eaa41e2549660a3246e1ee2.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo" ToolTip="Pinche para cambiar la imagen de fondo."/>
+            <Image Height="67" Width="81" Source="https://www.nintenderos.com/wp-content/uploads/2019/04/super-mario-maker.jpg" Stretch="UniformToFill" MouseUp="cambiarFondo" ToolTip="Pinche para cambiar la imagen de fondo."/>
+            <Image x:Name="imgGorroMini" Height="70" Width="66" Source="http://4.bp.blogspot.com/_WvACVGW1iPE/TPBCmaPdcvI/AAAAAAAABaM/dcZrsZWGg_M/s1600/navidad-gorro-3.png" MouseLeftButtonDown="inicioArrastrarGorro" ToolTip="Arrastra el gorro a Mario para ponerselo."/>
         </WrapPanel>
-        <Image Margin="2,10.3,2,2" Grid.RowSpan="3" Grid.ColumnSpan="2" Source="logoSuperTamagochi.png"/>
-        <TextBox x:Name="lblPuntuacion" Grid.ColumnSpan="2" Grid.Column="2" Margin="10,0,0,7.258" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" FontWeight="Bold" FontFamily="Segoe UI Black" Text="TU PUNTUACIÓN ES DE X PUNTOS" Background="{x:Null}" VerticalScrollBarVisibility="Disabled" IsReadOnly="True" Padding="2" Height="52.259"/>
+        <TextBox x:Name="lblMensajes" Grid.ColumnSpan="3" Grid.Column="1" Margin="10,0,9.59,7" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" FontWeight="Bold" FontFamily="Segoe UI Black" Text="BIENVENIDO" Background="{x:Null}" VerticalScrollBarVisibility="Disabled" IsReadOnly="True" Padding="2" Height="53" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="btnAlimentar" Content="Alimentar" FontSize="22" FontWeight="Bold" Click="btnAlimentar_Click" Foreground="Black" Grid.Column="4" Margin="5,3" Grid.Row="2">
+            <Button.Background>
+                <ImageBrush ImageSource="btnFondo.jpg"/>
+            </Button.Background>
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Viewbox>
+                        <TextBlock>Alimentar</TextBlock>
+                    </Viewbox>
+                </DataTemplate>
+            </Button.ContentTemplate>
+        </Button>
+        <Viewbox Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBox TextWrapping="Wrap" Text="Energía" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" MinWidth="0" RenderTransformOrigin="0.5,0.5" Width="93" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.101"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.123"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBox Text="Diversión" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" TextWrapping="Wrap"/>
+        </Viewbox>
+        <Viewbox Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2">
+            <TextBox TextWrapping="Wrap" Text="Comida" FontWeight="Bold" FontSize="20" TextAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="93"/>
+        </Viewbox>
+        <Viewbox Grid.RowSpan="3">
+            <Image Source="logoSuperTamagochi.png" MouseLeftButtonUp="acercaDe" Height="927" Width="1562"/>
+        </Viewbox>
+        <Viewbox HorizontalAlignment="Left" Height="55" Grid.Row="3" VerticalAlignment="Top" Width="228">
+            <Label Content="Logros" VerticalAlignment="Top" Height="49" Width="208" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </Viewbox>
     </Grid>
-</Window>
-
-
-    
+</Window>    

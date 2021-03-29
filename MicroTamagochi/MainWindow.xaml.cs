@@ -29,11 +29,15 @@ namespace MicroTamagochi
         double decremento1 = 5.0;
         double decremento2 = 5.0;
         double decremento3 = 5.0;
+        string nombre;
 
 
         public MainWindow()
         {
             InitializeComponent();
+            VentanaBienvenida pantallaInicio = new VentanaBienvenida(this);
+            pantallaInicio.ShowDialog();
+
             t1 = new DispatcherTimer();
             t1.Interval = TimeSpan.FromSeconds(1);
             t1.Tick += new EventHandler(reloj);
@@ -50,8 +54,8 @@ namespace MicroTamagochi
             if (this.pbEnergia.Value <= 0 || this.pbDiversion.Value <= 0 || this.pbComida.Value <= 0)
             {
                 t1.Stop();
-                this.lblPuntuacion.Text = "TU PUNTUACIÓN ES DE " + this.timer.ToString() + " PUNTOS";
-                this.lblPuntuacion.Visibility = Visibility.Visible;
+                this.lblMensajes.Text = "TU PUNTUACIÓN ES DE " + this.timer.ToString() + " PUNTOS";
+                this.lblMensajes.Visibility = Visibility.Visible;
                 btnAlimentar.IsEnabled = false;
                 btnDescansar.IsEnabled = false;
                 btnJugar.IsEnabled = false;
@@ -121,6 +125,39 @@ namespace MicroTamagochi
         private void cambiarFondo(object sender, MouseButtonEventArgs e)
         {
             this.imgFondo.Source = ((Image)sender).Source;
+        }
+
+        private void acercaDe(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Programa realizado por:\nJavier Álvarez Páramo\n\n¿Desea salir?", "Acerca de Super Tamagochi", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    this.Close();
+                    break;
+            }
+        }
+
+        public void setNombre(string nombre)
+        {
+            this.nombre = nombre;
+            lblMensajes.Text = lblMensajes.Text + " " + nombre;
+        }
+
+        private void inicioArrastrarGorro(object sender, MouseButtonEventArgs e)
+        {
+            DataObject data = new DataObject(((Image)sender));
+            DragDrop.DoDragDrop((Image)sender, data, DragDropEffects.Move);
+        }
+
+        private void colocarColeccionable(object sender, DragEventArgs e)
+        {
+            Image aux = (Image)e.Data.GetData(typeof(Image));
+            switch (aux.Name) {
+                case "imgGorroMini":
+                    imgGorro.Visibility = Visibility.Visible;
+                    break;
+            }
         }
     }
 }
