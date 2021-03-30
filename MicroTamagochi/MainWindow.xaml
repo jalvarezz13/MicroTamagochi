@@ -706,7 +706,22 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="guinarOjoAnimation">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ojoCerradoDerArriba">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ojoCerradoDerAbajo">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource guinarOjoAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>
 
     <Grid Margin="6,2">
         <Grid.ColumnDefinitions>
@@ -1037,9 +1052,9 @@
                 </Image.RenderTransform>
             </Image>
         </Canvas>
-        <ProgressBar x:Name="pbDiversion" Grid.Column="3" Grid.Row="1" Value="20" Background="#7FFFFFFF" Margin="5,3" BorderBrush="#00000000"/>
-        <ProgressBar x:Name="pbComida" Grid.Column="3" Grid.Row="2" Value="20" Background="#7FFFFFFF" Margin="5,3" BorderBrush="#00000000"/>
-        <ProgressBar x:Name="pbEnergia" Grid.Column="3" Value="20" Background="#7FFFFFFF" Margin="5,3" BorderBrush="#00000000"/>
+        <ProgressBar x:Name="pbDiversion" Grid.Column="3" Grid.Row="1" Value="90" Background="#7FFFFFFF" Margin="5,3" BorderBrush="#00000000"/>
+        <ProgressBar x:Name="pbComida" Grid.Column="3" Grid.Row="2" Value="90" Background="#7FFFFFFF" Margin="5,3" BorderBrush="#00000000"/>
+        <ProgressBar x:Name="pbEnergia" Grid.Column="3" Value="90" Background="#7FFFFFFF" Margin="5,3" BorderBrush="#00000000"/>
         <StackPanel Margin="6,0,6,6" Grid.Row="4" Background="#85000000">
             <Image x:Name="logro1" Height="70" Source="masDe5Seg.png" Visibility="Hidden"/>
             <Image x:Name="logro2" Height="70" Source="masDe10Seg.png" Visibility="Hidden"/>
@@ -1165,5 +1180,8 @@
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
+        <Viewbox Grid.Row="7">
+            <TextBox x:Name="tbPuntos" TextWrapping="Wrap" Text="PUNTOS: 0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" TextAlignment="Center" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        </Viewbox>
     </Grid>
 </Window>    

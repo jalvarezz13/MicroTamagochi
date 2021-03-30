@@ -74,7 +74,7 @@ namespace MicroTamagochi
             this.pbDiversion.Value -= decremento2;
             this.pbComida.Value -= decremento3;
             timer += 1;
-
+            tbPuntos.Text = "PUNTOS: " + timer.ToString();
 
             if (this.pbEnergia.Value <= 0 || this.pbDiversion.Value <= 0 || this.pbComida.Value <= 0)
             {
@@ -196,6 +196,14 @@ namespace MicroTamagochi
         private void cambiarFondo(object sender, MouseButtonEventArgs e)
         {
             this.imgFondo.Source = ((Image)sender).Source;
+            apagarEncenderBotones(false);
+            t1.Stop();
+
+            Storyboard sbGuino = (Storyboard)this.Resources["guinarOjoAnimation"];
+            sbGuino.Begin();
+
+            apagarEncenderBotones(true);
+            t1.Start();
             if (logro3.Visibility == Visibility.Hidden)
             {
                 logro3.Visibility = Visibility.Visible;
