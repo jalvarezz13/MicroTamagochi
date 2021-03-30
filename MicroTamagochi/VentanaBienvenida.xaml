@@ -30,7 +30,7 @@
         </Button>
         <Canvas HorizontalAlignment="Left" Height="50" Margin="90,150,0,0" VerticalAlignment="Top" Width="390" Background="#7FFBF6F6">
             <Label Content="Introduce tu nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Height="30" FontSize="16" FontWeight="Bold" Background="{x:Null}" Foreground="Black" Canvas.Left="10" Canvas.Top="10" HorizontalContentAlignment="Stretch" MaxWidth="175" MaxHeight="30" MinWidth="175" MinHeight="30"/>
-            <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Width="190" Canvas.Left="190" Canvas.Top="10" Background="{x:Null}" VerticalContentAlignment="Center" Padding="5,0,0,0" FontStyle="Italic" BorderBrush="#7F000000"/>
+            <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Escribe tu nombre..." VerticalAlignment="Top" Width="190" Canvas.Left="190" Canvas.Top="10" Background="{x:Null}" VerticalContentAlignment="Center" Padding="5,0,0,0" FontStyle="Italic" BorderBrush="#7F000000" KeyDown="tbNombre_KeyDown" AutoWordSelection="True" GotFocus="tbNombre_GotFocus"/>
         </Canvas>
     </Grid>
 </Window>

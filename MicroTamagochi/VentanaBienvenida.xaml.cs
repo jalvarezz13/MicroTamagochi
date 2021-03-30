@@ -31,5 +31,18 @@ namespace MicroTamagochi
             ventanaPadre.setNombre(tbNombre.Text);
             this.Close();
         }
+
+        private void tbNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                enviarNombre(this, new RoutedEventArgs());
+            }
+        }
+
+        private void tbNombre_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbNombre.Clear();
+        }
     }
 }

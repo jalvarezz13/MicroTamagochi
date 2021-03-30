@@ -116,5 +116,38 @@
   <ItemGroup>
     <Resource Include="iconoVentana.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gafasRosas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="masDe5Seg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="masDe10Seg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="diamond0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ruby2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="coin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="barraAl100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bigoteMario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gorroChef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="klipartz.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgGorro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
