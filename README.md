@@ -1,5 +1,5 @@
 # MicroTamagochi #
-### Repositorio para trabajar en la construcción de un juego con C#. ###
+### Construcción de un minijuego con C# y animándolo con Microsoft Blend. ###
 
 Asignatura: Interacción Persona-Ordenador II
 
@@ -7,6 +7,4 @@ Autor: Javier Álvarez Páramo
 
 Curso: 2020-2021
 
-Fecha de inicio: 17-02-2021
-
-Fecha de fin: XX-XX-2021
+Fecha: 31-03-2021
