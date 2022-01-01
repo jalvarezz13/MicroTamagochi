@@ -28,4 +28,6 @@ git clone https://github.com/jalvarezz13/MicroTamagochi
   ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
 
 ## Autores
-  * Javier Álvarez Páramo <a title="Linkedin" href="https://www.linkedin.com/in/javieralpa/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<pre>Javier Álvarez Páramo  <a align="center" title="Linkedin" href="https://www.linkedin.com/in/javieralpa/"><img align="center" src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a></pre>
+
+
